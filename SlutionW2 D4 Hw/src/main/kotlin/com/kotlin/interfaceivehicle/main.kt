@@ -4,6 +4,6 @@ fun main (){
     var sC = SportCar(true,"booch",10,4)
     sC.printStates()
     var truck = Truck()
-    truck.printStates()
+    truck._speed()
 
 }
