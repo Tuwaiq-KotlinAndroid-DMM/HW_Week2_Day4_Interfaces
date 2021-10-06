@@ -1,25 +1,27 @@
 package com.kotlin.hw
 
-class Truck(_speed:Int) : Vehicle(_speed) {
+class Truck(_speed:Int,_name:String) : Vehicle(_speed,_name) {
 
     override fun changeGear(a: Int) {
         if(startEngine){
-            when(speed){
-                in 0..5 -> gear = 1
-                in 6 ..11 -> gear = 2
-                in 12 ..17 -> gear =3
-                in 18 .. 23 -> gear = 4
-                in 24 .. 29 -> gear = 5
-                in 30 .. 35 -> gear = 6
-                in 36 ..41 -> gear = 7
-                in 42 .. 47 -> gear =8
-                in 48 .. 53 -> gear =9
-                in 54 .. 59 -> gear = 10
-                else -> gear = 0
-            }
-
+           if (a >= 0 && a <=5)
+               gear = a
+            else
+                gear = 0
         }else
             gear = 0
+
+        // in below, the change of gear depends on speed , because the question wasn't clear enough for me
+        /*when (speed)
+        {
+            in 1..20 -> gear =1
+            in 20..40 -> gear =2
+            in 40..60 -> gear = 3
+            in 60 ..80 -> gear = 4
+            in 80 ..100 -> gear = 5
+            else -> gear = 0
+        }*/
+
     }
 
     override fun speedUp() {

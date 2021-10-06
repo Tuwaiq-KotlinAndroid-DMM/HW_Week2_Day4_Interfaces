@@ -5,16 +5,20 @@ fun main(args: Array<String>) {
 
     println("Enter your speed: ")
     var speedSport = readLine()!!.toInt()
-    var sportCar = SportCar(speedSport)
-    println("SportCar present state : ${sportCar.printStates()}")
-    sportCar.changeGear(speedSport)
-    println("speed: ${sportCar.speed}\t gear: ${sportCar.gear}")
+    println("Enter your car: ")
+    var carSport = readLine()!!
+    var sportCar = SportCar(speedSport,carSport)
+    sportCar.isMoving()
+    sportCar.changeGear(4)
+   sportCar.printStates()
     println()
     println("Enter your speed: ")
     var speedTruck = readLine()!!.toInt()
-    var truck = Truck(speedTruck)
-    println("SportCar present state : ${truck.printStates()}")
-    truck.changeGear(speedTruck)
-    println("speed: ${truck.speed}\t gear: ${truck.gear}")
+    println("Enter your car: ")
+    var carTruck = readLine()!!
+    var truck = Truck(speedTruck,carTruck)
+    truck.isMoving()
+    truck.changeGear(3)
+    truck.printStates()
 
 }

@@ -1,9 +1,9 @@
 package com.kotlin.hw
 
-open class Vehicle(var _speed:Int):IVehicle {
+open class Vehicle(var _speed:Int,var _name:String):IVehicle {
 
     protected var startEngine :Boolean = false
-    var typeCar  =""
+    var typeCar  =_name
     var speed :Int = _speed
     var gear :Int = 0
 
@@ -32,14 +32,16 @@ open class Vehicle(var _speed:Int):IVehicle {
         
     }
 
-    open fun printStates():String{
+    open fun printStates(){
         var str:String
         if (isMoving())
             str = "moving"
         else
             str ="stopped"
 
-        return str
+        println("SportCar present state : $str\n" +
+                "speed: $speed\t gear: $gear")
+
 
     }
 
