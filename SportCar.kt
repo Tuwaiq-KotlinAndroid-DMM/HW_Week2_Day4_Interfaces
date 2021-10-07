@@ -1,16 +1,15 @@
 package com.kotlin.homeworkweek2day4
 
-class SportCar(startEngine: Boolean, type: String, speed: Int, gear:Int)
-    :Vehicle(startEngine,type,speed,gear) {
+class SportCar(startEngine: Boolean, type: String, speed: Int, gear: Int) : Vehicle(startEngine, type, speed, gear) {
 
-  fun changeGear() {
-        gear =  if(startEngine && speed in 0..5)
-            return gear
-
-        else 0
+    override fun changeGear(_gear: Int) {
+        if (startEngine && speed in 0..5)
+            gear = gear
+        else gear = 0
     }
 
-     fun speedup(){
+    override fun speedup(): Int {
         speed += 20
+        return speed
     }
 }
